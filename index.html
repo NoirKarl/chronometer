@@ -3,46 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cronometro</title>
+    <title>Generador Paletas de colores</title>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
 </head>
 <body>
-    
-    <div class="marco">
-        <div class="tiempo" id="tiempo">00:00:00.000</div>
-        <div class="botones-contenedor">
-            <div class="btn" onclick="iniciar()">
-            <i class="fas fa-play"></i>
-            </div>
-            <div class="btn" onclick="pausar()">
-            <i class="fas fa-pause"></i>
-            </div>
-            <div div class="btn" onclick="reiniciar()">
-            <i class="fas fa-undo-alt"></i>
-            </div>
-        </div>
-        </div>
+    <div>
+        <div id="palleteContainer"></div>
+        <button class="boton ov-btn-grow-ellipse" onclick="updatePallete()">Generar paleta</button>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

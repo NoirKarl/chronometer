@@ -1,42 +1,86 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    transition: all 0.3;
 }
-
 
 body {
+    margin: 0;
+    font-family: 'Red Hat Display', sans-serif;
+    position: relative;
+    display: grid;
+    place-items: center;
     min-height: 100vh;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.container {
+    text-align: center; /* Centrar contenido */
+}
+
+#palleteContainer {
+    width: 320px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 300%;
-    font-family: calibri;
-    color: white;
-    background: linear-gradient(#77f2de,#ff9d2e);
+    flex-direction: column;
+    margin: 20px 0;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
-.marco {
-    border-radius: 30px;
-    background: black;
-    padding: 30px;
-    border: 5px solid white;
-}
+.palleteItem {
+    transition: background-color .5s;
+} 
 
-.botones-contenedor {
-    display: flex;
-    justify-content: space-around;
-}
-
-.btn {
-    cursor: pointer;
+.palleteItem span {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
     display: inline-block;
-    font-size: 60%;
-    padding: 20px;
+    min-width: 80px;
+}
+.ov-btn-grow-ellipse {
+    background: #fff; /* color de fondo */
+    color: black; /* color de fuente */
+    border: 2px solid #01010a; /* tamaño y color de borde */
+    padding: 16px 20px;
+    border-radius: 3px; /* redondear bordes */
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: flex; /* Utilizar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    width: 200px; /* Ancho del contenedor del botón */
+    margin: 0 auto; /* Centrar horizontalmente en caso de flexbox no estar soportado */
 }
 
-.btn:hover{
+.ov-btn-grow-ellipse:hover {
+    color: #fff; /* color de fuente hover */
     transform: scale(1.1);
-    color: #ffa0ee;
+    cursor: pointer;
+
 }
+
+.ov-btn-grow-ellipse::after {
+    content: "";
+    background: #4741d7; /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    border-radius: 50%;
+    left: -50%;
+    right: -50%;
+    top: -150%;
+    bottom: -150%;
+    transform: scale(0, 0);
+    transition: all 0.4s ease;
+}
+
+.ov-btn-grow-ellipse:hover::after {
+    transition: all 0.6s ease-out;
+    transform: scale(1, 1);
+}
+
+
+
